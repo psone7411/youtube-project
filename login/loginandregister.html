@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            background-color: black;
+        }
+        .box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            margin-top: 200px;
+            width: 400px;
+            height: 500px;
+            background-color: rgb(253, 249, 229);
+            position: relative;
+        }
+        .btn-container{
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            justify-content:center;
+            border-radius: 25px;
+            background-color: white;
+            margin-top: 20px;
+            
+        }
+        .btn-container button{
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 25px;
+            background:transparent;
+            position: relative;
+        }
+        .move-btn{
+            width:100px;
+            height: 35px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            background:linear-gradient(to right,#ff105f,#ffad06);
+            transition: 0.5s;
+        }
+        .meta{
+            text-align: center;
+            margin-top:30px;
+        }
+        .meta a{
+            color: inherit;
+            font-size: 25px;
+            color: #ff7a06;
+            margin:0px 10px;
+            font-size: 2em;
+        }
+        .input-container{
+            opacity: 0;
+          padding:40px 50px;
+        }
+        .input-container-second{
+            padding:40px 50px;
+            display: none;
+        }
+        .input-container .input,.input-container-second .input{
+            display:block;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size:14px;
+            padding: 10px 0px;
+            border-bottom: 1px solid black;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .checkbox{
+            padding:20px 0px;
+        }
+        .checkbox input{
+            display: inline;
+            margin-right:7px;
+        }
+        .login-container{
+            width: 100%;
+            text-align: center;
+        }
+        .login-btn{
+            border: none;
+            outline: none;
+            padding:15px 100px;
+            background:linear-gradient(to right,#ff105f,#ffad06);
+            border-radius: 30px;
+            margin-top: 15px;
+        }
+        .login,.register{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-container">
+            <div class="box">
+                <div>
+                    <button class="move-btn"></button>
+                    <div class="btn-container"> 
+                        <button class="login" onclick="loginShow()">login</button>
+                        <button class="register" onclick="registerShow()">register</button>
+                    </div>
+                    <div class="meta">
+                        <a href="https://www.facebook.com"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.twitter.com"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="https://www.instagram.com"><ion-icon name="logo-instagram"></ion-icon></a>
+                    </div>
+               <div class="second-container">
+                <form class="input-container animate__animated animate__fadeInRight" >
+                    <input class="input" type="text" name="" id="" placeholder="user name" required>
+                    <input class="input" type="password" name="" id="" placeholder="enter password" required>
+                    <div class="checkbox">
+                        <input type="checkbox" name="" id="" required><span>Remember the password</span>
+                    </div>
+                   <div class="login-container">
+                    <button class="login-btn">LogIn</button>
+                   </div>
+                </form>
+                <form class="input-container-second animate__animated animate__fadeInLeft">
+                    <input class="input" type="text" name="" id="" placeholder="user name" required>
+                    <input class="input" type="password" name="" id="" placeholder="enter password" required>
+                    <!-- <div class="checkbox">
+                        <input type="checkbox" name="" id="" required><span>Remember the password</span>
+                    </div> -->
+                   <div class="login-container">
+                    <button class="login-btn">LogIn</button>
+                   </div>
+                </form>
+               </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        let login=document.getElementsByClassName("login")[0]
+        let register=document.getElementsByClassName("register")[0]
+         let inputContainer=document.getElementsByClassName("input-container")[0]
+         let inputContainerSecond=document.getElementsByClassName("input-container-second")[0]
+        let moveBtn=document.getElementsByClassName("move-btn")[0]
+        function loginShow(){
+            console.log("hey")
+            moveBtn.style.left="100px"
+            inputContainer.style.display=("block")
+            inputContainerSecond.style.display=("none")
+        }
+        function registerShow(){
+            // moveBtn.style.position="absolute"
+            moveBtn.style.left="200px"
+            inputContainer.style.display=("none")
+            inputContainerSecond.style.display=("block")
+            inputContainerSecond.style.transition=("0.5s")
+        }
+
+    </script>
+
+ 
+</body>
+</html>

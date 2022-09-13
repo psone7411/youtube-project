@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 60px;
+            margin-bottom: 10px
+        }
+        .text{
+            font-size: 50px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+        .btn-container{
+            display: flex;
+            font-size: 20px;
+        }
+        .btn-container button{
+            padding: 10px 20px;
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <div class="text">0</div>
+        <div class="btn-container">
+            <button class="btn decrease">Decrease</button>
+            <button class="btn reset">Reset</button>
+            <button class="btn increase">Increase</button>
+        </div>
+    </div>
+    <script>
+        // const decrease=document.getElementById("decrease")
+        // const reset=document.getElementById("reset")
+        // const increase=document.getElementById("increase")
+        let count=0;
+        const text=document.querySelector(".text")
+        const btns=document.querySelectorAll(".btn");
+
+        btns.forEach(element=> {
+            element.addEventListener("click",(e)=>{
+                const styles=e.currentTarget.classList;
+                if(styles.contains("decrease")){
+                    count--;
+                }else if(styles.contains("increase")){
+                    count++
+                }else{
+                    count=0;
+                }
+                if(count>0){
+                    text.style.color=("green")
+                }
+                if(count<0){
+                    text.style.color=("red")
+                }
+                if(count===0){
+                    text.style.color=("black")
+                }
+                text.textContent=count
+            })
+        });
+        
+    </script>
+</body>
+</html>

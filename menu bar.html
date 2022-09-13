@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://kit.fontawesome.com/2a89d0aa21.js" crossorigin="anonymous"></script>
+ 
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+        }
+        .menu-container{
+            width:80%;
+            margin:20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav p{
+            font-size: 30px;
+        }
+        .ul-container li{
+            display: inline;
+            padding: 10px 20px;
+            background: gold;
+            font-size: 20px;
+        }
+        .menu{
+            font-size: 40px;
+            display: none;
+        }
+        @media screen and (max-width:690px) {
+            .menu{
+                display: block;
+            }
+            .ul-container{
+                /* display: none; */
+            }
+            .ul-container ul{
+                width: 70%;
+                width: 500px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                top: 200px;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .ul-container ul li{
+                margin-bottom: 2px;
+            }
+             .showBar{
+                display:none;
+            }
+            /* .showBar ul{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top:200px;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                transition: 0.5s ease;
+            }
+            .showBar ul li{
+                margin-bottom: 1px;
+                padding: 15px 100px;
+            }
+            .trans{
+                transform: translateY(-10px);
+                
+            }  */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="menu-container">
+            <p>Menu Bar</p>
+                <div class="ul-container ">
+                    <ul>
+                        <li>Home</li>
+                        <li>Contact</li>
+                        <li>About</li>
+                        <li>Service</li>
+                    </ul>
+                </div>
+                <i class="fa-solid fa-bars menu"></i>
+        </nav>
+    </div>
+    <script>
+        const menu=document.querySelector(".menu");
+        const ul=document.querySelector(".ul-container")
+        menu.addEventListener("click",()=>{
+            showBar()
+        });
+        function showBar(){
+            ul.classList.toggle("showBar");
+        }
+    </script>
+</body>
+</html>

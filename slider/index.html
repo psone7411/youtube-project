@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height:100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgb(203, 203, 203)
+        }
+        .title{
+            font-size: 2em;
+            font-weight: 800;
+            position: relative;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .title::after{
+            content: "";
+            position: absolute;
+            width: 150px;
+            height:3px;
+            background: linear-gradient(to right,red,yellow);
+            top:50px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .box-container{
+            width: 500px;
+            height: 230px;
+            box-shadow: 5px 5px 10px 8px rgb(158, 158, 158);
+            display: flex;
+            overflow: hidden;
+        }
+        .boxsec-container{
+            height: 100%;
+            padding: 30px;
+            color: #777;
+            background: rgb(232, 230, 227);
+            position: relative;
+            z-index: 1;
+        }
+        .img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            margin-right: 15px;
+        }
+        .me{
+            display: flex;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+        .me h3{
+            color: rgb(124, 4, 4);
+            margin-bottom: 5px;
+        }
+        .me p{
+            font-size: 14px;
+        }
+        .about{
+            text-align: justify;
+        }
+        .slider{
+            width: 50px;
+            height: 230px;
+            background-color: antiquewhite;
+            padding: 5px;    
+            
+        }
+        .two-join{
+            transition: 0.5s;
+            position: relative;
+            /* display: flex;
+            flex-direction: column; */
+        }
+        .arrow{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .arrow .icon{
+            font-size: 30px;
+        }
+        .boxsec-container::before{
+            content: "";
+            position:absolute;
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            border-bottom-right-radius: 100px;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Customer Reviews</div>
+            <div class="box-container">
+                <div class="two-join">
+                    <div class="boxsec-container">
+                        <div class="me">
+                             <img class="img" src="./20190408_202542.png" alt="">
+                             <div class="indro">
+                                 <h3>Kay kay</h3>
+                                 <p>Web designer</p>
+                             </div>
+                        </div>
+                         <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, harum soluta, hic, debitis mollitia voluptatem quasi ipsum dolores quidem dicta illum cum nam cumque rem ex eius amet consequuntur adipisci!</p>
+                     </div>
+                     <div class="boxsec-container">
+                        <div class="me">
+                             <img class="img" src="./20190408_202542.png" alt="">
+                             <div class="indro">
+                                 <h3>ps</h3>
+                                 <p>Web designer</p>
+                             </div>
+                        </div>
+                         <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, harum soluta, hic, debitis mollitia voluptatem quasi ipsum dolores quidem dicta illum cum nam cumque rem ex eius amet consequuntur adipisci!</p>
+                     </div>
+                     <div class="boxsec-container">
+                        <div class="me">
+                             <img class="img" src="./20190408_202542.png" alt="">
+                             <div class="indro">
+                                 <h3>lkay</h3>
+                                 <p>Web designer</p>
+                             </div>
+                        </div>
+                         <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, harum soluta, hic, debitis mollitia voluptatem quasi ipsum dolores quidem dicta illum cum nam cumque rem ex eius amet consequuntur adipisci!</p>
+                     </div>
+                     <div class="boxsec-container">
+                        <div class="me">
+                             <img class="img" src="./20190408_202542.png" alt="">
+                             <div class="indro">
+                                 <h3>psone</h3>
+                                 <p>Web designer</p>
+                             </div>
+                        </div>
+                         <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, harum soluta, hic, debitis mollitia voluptatem quasi ipsum dolores quidem dicta illum cum nam cumque rem ex eius amet consequuntur adipisci!</p>
+                     </div>
+                </div>
+                <div class="slider">
+                    <div class="arrow">
+                        <ion-icon class="icon up-arrow" name="arrow-up-outline"></ion-icon>
+                        <ion-icon class="icon down-arrow" name="arrow-down-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+             <!-- <div class="box-container">
+                <div class="boxsec-container">
+                   <div class="me">
+                        <img class="img" src="./20190408_202542.png" alt="">
+                        <div class="indro">
+                            <h3>Kay kay</h3>
+                            <p>Web designer</p>
+                        </div>
+                   </div>
+                    <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, harum soluta, hic, debitis mollitia voluptatem quasi ipsum dolores quidem dicta illum cum nam cumque rem ex eius amet consequuntur adipisci!</p>
+                </div>
+             </div> -->
+    </div>
+    <script>
+        const up=document.getElementsByClassName("up-arrow")[0];
+        const down=document.getElementsByClassName("down-arrow")[0];
+        const twoJoin=document.querySelector(".two-join")
+        let x=0;
+        up.addEventListener("click",()=>{
+            if(x>"-690"){
+                x=x-230;
+                twoJoin.style.top=x+"px";
+            }
+        })
+        down.addEventListener("click",()=>{
+            if(x<0){
+                x=x+230;
+                twoJoin.style.top=x+"px"
+            }
+        })
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: 0;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .side-bar-container{
+            width:400px;
+            height: 100vh;
+            background-color: rgb(231, 229, 229);
+            transition: 0.5s;
+        }
+        .side-bar{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px ;
+            font-size: 25px;
+        }
+        .side-bar .multi{
+            color: rgb(120, 0, 0);
+        }
+        .menu{
+            padding:20px;
+            font-size: 40px;
+        }
+       .list-container{
+        /* padding: 10px 20px; */
+       }
+       .list-container ul{
+        font-size: 1.5em;
+        list-style: none;
+       }
+       .list-container ul li{
+        padding: 15px;
+        transition: 0.5s;
+       }
+       .list-container ul li:hover{
+        transform: scale(1.05);
+       }
+       .tran{
+        transform: translateX(-400px);
+       }
+       /* .tran-block{
+        transform: translateX(0);
+       } */
+       @media screen and (max-width:430px) {
+        .side-bar-container{
+            position: absolute;
+            width:95%;
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="side-bar-container">
+                <div class="side-bar">
+                    <p>CodingAddict</p>
+                    <i class="fa-solid fa-xmark multi"></i>
+                </div>
+                <div class="list-container">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Projects</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-container">
+                <i class="fa-solid fa-bars menu"></i>
+            </div>
+    </div>
+    <script>
+        const multi=document.getElementsByClassName("multi")[0];
+        const menu=document.getElementsByClassName("menu")[0];
+        const sideBarContainer=document.getElementsByClassName("side-bar-container")[0];
+        multi.addEventListener("click",()=>{
+            sideBarContainer.classList.add("tran")
+        })
+        menu.addEventListener("click",()=>{
+            sideBarContainer.classList.toggle("tran")
+        })
+    </script>
+</body>
+</html>

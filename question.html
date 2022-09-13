@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title{
+            font-size: 40px;
+        }
+        .question{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: antiquewhite;
+            margin: 20px 0;
+        }
+        .question-title{
+            width: 100%;
+            display: flex;
+            justify-content:space-around; 
+            align-items: center;
+            font-size: 21px;
+            padding: 15px;
+        }
+        .question-text{
+            display: none;
+            padding: 25px;
+        }
+        .minus{
+            display: none;
+        }
+        .show-text .question-text{
+            display: block;
+        }
+        .show-text .minus{
+            display: block;
+        }
+        .show-text .plus{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="title">General Questions</p>
+        <article class="question">
+           <div class="question-title">
+                <p>Do you accept all major credit cards</p>
+                <div class="question-btn">
+                    <i class="fa-solid fa-plus plus"></i>
+                    <i class="fa-solid fa-minus minus"></i>
+                </div>
+           </div>
+           <div class="question-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum odio molestias sed in odit quo quidem magnam similique nihil ratione. Beatae velit similique aperiam error facilis aliquid sint, dicta ipsum.</p>
+           </div>
+        </article>
+        <article class="question">
+            <div class="question-title">
+                 <p>Do you accept all major credit cards</p>
+                 <div class="question-btn">
+                     <i class="fa-solid fa-plus plus"></i>
+                     <i class="fa-solid fa-minus minus"></i>
+                 </div>
+            </div>
+            <div class="question-text">
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum odio molestias sed in odit quo quidem magnam similique nihil ratione. Beatae velit similique aperiam error facilis aliquid sint, dicta ipsum.</p>
+            </div>
+         </article>
+         <article class="question">
+            <div class="question-title">
+                 <p>Do you accept all major credit cards</p>
+                 <div class="question-btn">
+                     <i class="fa-solid fa-plus plus"></i>
+                     <i class="fa-solid fa-minus minus"></i>
+                 </div>
+            </div>
+            <div class="question-text">
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum odio molestias sed in odit quo quidem magnam similique nihil ratione. Beatae velit similique aperiam error facilis aliquid sint, dicta ipsum.</p>
+            </div>
+         </article>
+    </div>
+    <script>
+
+        // ဒုတိယနည်း
+        const questions =document.querySelectorAll('.question');
+        questions.forEach(element => {
+            const btn=element.querySelector(".question-btn");
+            btn.addEventListener("click",()=>{
+                questions.forEach(items=>{
+                    if(items!==element){
+                        items.classList.remove("show-text")
+                    }
+                })
+                element.classList.toggle("show-text")
+            })
+        });
+
+        // ပထမနည်း
+        // const questionBtn=document.querySelectorAll(".question-btn");
+        // questionBtn.forEach(element => {
+        //     element.addEventListener("click",(e)=>{
+        //         const question=e.currentTarget.parentElement.parentElement;
+        //         question.classList.toggle("show-text")
+        //     })
+        // });
+    </script>
+</body>
+</html>

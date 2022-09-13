@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h2{
+            font-size: 50px;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        #btn{
+            padding: 20px 50px;
+            font-size: 35px;
+            background-color: chocolate;
+            color: white;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>background-color : <span id="color">#f55dde</span> </h2>
+        <button id="btn">Click</button>
+    </div>
+    <script>
+        const colors=[0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+        const color=document.getElementById("color");
+        const btn=document.getElementById("btn");
+
+        const getRandomNumber=()=>{
+           return Math.floor(Math.random()*colors.length) 
+        }
+        btn.addEventListener("click",()=>{
+            let hexColor="#";
+            for(let i=0;i<6;i++){
+                hexColor += colors[getRandomNumber()]; 
+                // console.log(hexColor)
+                color.textContent=hexColor;
+                document.body.style.backgroundColor=hexColor
+            }
+        })
+        // const colors=["red","rgba(241,125,55)","green","#d56e7a"];
+        // const color=document.getElementById("color");
+        // const btn=document.getElementById("btn");
+        // btn.addEventListener("click",()=>{
+        //     const randomNumber=getColorFunction()
+        //     color.innerHTML=colors[randomNumber]
+        //     document.body.style.backgroundColor=colors[randomNumber]
+        // })
+        // function getColorFunction(){
+        //     return Math.floor(Math.random()*colors.length)
+        // }
+    </script>
+</body>
+</html>

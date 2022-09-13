@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-image:url(./slider2/241236405_3847845048649413_4643558349258052118_n.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .sec-container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .first-box-child{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:400px;
+            height:200px;
+            background-color: aliceblue;
+        }
+        .first-box-child p,.second-box p{
+            font-size: 40px;
+        }
+        .second-box{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 0, 0, 0.4);
+            visibility: hidden;
+        }
+        .second-box-child{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:400px;
+            height:200px;
+            background-color: aliceblue;
+            margin-bottom: 10px;
+        }
+        .model-overlay{
+        }
+        .multi-container{
+            position: absolute;
+            top:10px;
+            left:350px;
+            font-size: 40px;
+            color: rgb(156, 86, 226);
+        }
+        .btn{
+            /* margin-bottom:-10px; */
+            position: relative;
+            top: 40px;
+            padding: 10px 20px;
+        }
+        .tran{
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sec-container">
+
+            <div class="first-box-child">
+                <p>Modal Projects</p>
+                <button class="btn">open modal</button>
+            </div>
+
+            <div class="second-box">
+                <div class="second-box-child">
+                    <p>Modal Content</p>
+                    <div class="multi-container">
+                        <i class="fa-solid fa-xmark multi"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const btn=document.getElementsByClassName("btn")[0];
+        const multi=document.getElementsByClassName("multi-container")[0];
+        const firstBox=document.getElementsByClassName("first-box-child")[0];
+        const secondBoxChild=document.getElementsByClassName("second-box-child")[0];
+        const secondBox=document.getElementsByClassName("second-box")[0];
+
+        btn.addEventListener("click",()=>{
+            firstBox.style.visibility="hidden";
+            secondBox.style.visibility="visible";
+        })
+        multi.addEventListener("click",()=>{
+            firstBox.style.visibility="visible";
+            secondBox.style.visibility="hidden";
+        })
+    </script>
+</body>
+</html>

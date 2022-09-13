@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(182, 182, 182);
+        }
+        #container{
+            display: flex;
+        }
+        #image-container{
+            display: flex;
+            flex-direction: column;
+            margin:20px;
+            width: 150px 
+        }
+        #showImage{
+            width: 500px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div >
+            <img id="image-container" src="./116403617_738162956969262_5019288085325861850_n.jpg" alt="">
+            <img id="image-container" src="./240493251_396914092055500_2830792827517299303_n.jpg" alt="">
+            <img id="image-container" src="./240950363_10159122218009821_4195023348917980045_n.jpg" alt="">
+            <img id="image-container" src="./241180154_932392017312207_8256886972729491636_n.jpg" alt="">
+            <img id="image-container" src="./80431257_585141508938075_5879919526551748608_n.jpg" alt="">
+        </div>
+        <div>
+            <img id="showImage" src="./116403617_738162956969262_5019288085325861850_n.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        const imageContainer=document.querySelectorAll("#image-container");
+        let showImage=document.getElementById("showImage")
+        for(let i=0;i<imageContainer.length;i++){
+            imageContainer[i].addEventListener("click",()=>{
+                showImage.src=imageContainer[i].src
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .click{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        button{
+            padding: 10px 25px;
+            background-color: wheat;
+            color: black;
+            border: none;
+            outline: none;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            height: 200px;
+            background-color: antiquewhite;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .box p,div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="click"><button id="text">Click</button></div>
+    <div class="box">
+        <p>Are you delete this box or not</p>
+        <div>
+            <button id="cancel">Cancel</button>
+            <button id="del">Delete</button>
+        </div>
+    </div>
+    <script>
+        const click=document.getElementsByClassName("click")[0];
+        const cancel=document.getElementById("cancel")
+        const del=document.getElementById("del")
+        const box=document.getElementsByClassName("box")[0]
+        const text =document.getElementById("text")
+        click.addEventListener("click",showBox)
+        function showBox(){
+            box.style.opacity=("1");
+            box.style.pointerEvents=("auto")
+            cancel.addEventListener("click",()=>{
+                box.style.pointerEvents=("none")
+                box.style.opacity=("0");
+            })
+            del.addEventListener("click",()=>{
+                box.style.pointerEvents=("none")
+                box.style.opacity=("0");
+                alert("are you sure to delete")
+                text.textContent=("Acout deleted")
+            })
+            
+            //    alert("are you sure to delete")
+        }
+    </script>
+</body>
+</html>

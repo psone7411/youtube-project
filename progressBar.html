@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(176, 175, 175);
+        }
+        .skills{
+            position: relative;
+        }
+        .outer{
+            width: 170px;
+            height: 170px;
+            /* background-color: aqua; */
+            /* border: 1px solid black; */
+            border-radius:50%;
+            box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),-6px -6px 10px -1px rgba(255,255,255,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner{
+            width:120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),inset -4px -4px 6px -1px rgba(255,255,255,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner p{
+            font-size: 25px;
+            font-weight: 900;
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        circle{
+            fill: none;
+            stroke-width:25px;
+            stroke:url(#linearColors);
+            stroke-dasharray:440;
+            stroke-dashoffset:440;
+            animation: animate 2s linear forwards;
+        }
+        @keyframes animate {
+            100%{
+                stroke-dashoffset:156;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="skills">
+            <div class="outer">
+            <div class="inner">
+                <p id="number">65%</p>
+            </div>
+            </div>
+            
+        <svg height="170" width="170">
+            <linearGradient id="linearColors">
+                <stop offset="10%" stop-color="#01E400"></stop>
+                <!-- <stop offset="25%" stop-color="#FEFF01"></stop>
+                <stop offset="40%" stop-color="#FF7E00"></stop>
+                <stop offset="60%" stop-color="#FB0300"></stop>
+                <stop offset="80%" stop-color="#9B004A"></stop> -->
+                <stop offset="100%" stop-color="#7D0022"></stop>
+             </linearGradient>
+            <circle cx="85" cy="85" r="70" stroke-width="3"/>
+            Sorry, your browser does not support inline SVG.  
+        </svg> 
+        </div>
+    </div>
+    <script>
+        const number=document.getElementById("number")
+        let count=0;
+        setInterval(()=>{
+            if(count===65){
+                clearInterval()
+            }else{
+                count+=1;
+                number.innerHTML=count+"%";
+            }
+        },30)
+    </script>
+</body>
+</html>

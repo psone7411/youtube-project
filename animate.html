@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .sec-container{
+            width:20%;
+            margin-bottom: 120px;
+        }
+        .text{
+            position: absolute;
+            font-size: 50px;
+            font-weight: 800;
+            display: none;
+        }
+        .btn{
+            
+        }
+        .btn button{
+            font-size: 40px;
+        }
+        .active-text{
+            display: block;
+            animation: animate 0.5s linear forwards;
+        }
+        @keyframes animate {
+            0%{
+                margin-top: 50px;
+            }
+            100%{
+                margin-top: 0px;     
+            }
+        }
+        .active-btn{
+            padding: 10px;
+            background: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sec-container">
+                <div class="text"> 
+                    i am aa
+                </div>
+                <div class="text active-text"> 
+                    i am bb
+                </div>
+                <div class="text"> 
+                    i am cc
+                </div>
+                <div class="text"> 
+                    i am dd
+                </div>
+                <div class="text"> 
+                    i am ee
+                </div>
+        </div>
+        <div class="btn">
+            <button>aa</button>
+            <button class="active-btn">bb</button>
+            <button>cc</button>
+            <button>dd</button>
+            <button>ee</button>
+        </div>
+    </div>
+    <script>
+        const text=document.querySelectorAll(".text");
+        const button=document.querySelectorAll("button");
+        
+        let showText=(j)=>{
+            for(x of button){
+               x.classList.remove("active-btn")
+               button[j].classList.add("active-btn")
+            }
+            for(x of text){
+                x.classList.remove("active-text")
+                text[j].classList.add("active-text")
+            }
+        } 
+        // onclick မှာဒီလိုလှမ်းယူလို့ရ
+        // let i=Array.from(button).indexOf(event.target);
+        for(let i=0;i<button.length;i++){
+            button[i].addEventListener("click",()=>{
+               showText(i)
+            })
+        }
+
+    </script>
+</body>
+</html>
